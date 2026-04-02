@@ -58,8 +58,20 @@ http://localhost:5678
 ├── .env.local             # Secrets (generated, not version-controlled)
 ├── .env.example           # Configuration template
 ├── .gitignore             # Git ignore rules (includes .env.local)
+├── .dockerignore          # Docker build ignore rules
 └── README.md              # This file
 ```
+
+## .dockerignore
+
+The `.dockerignore` file optimizes Docker builds by excluding unnecessary files:
+- Git metadata (`.git`, `.gitignore`)
+- Environment files with secrets (`.env.local`)
+- Documentation (`.md` files)
+- IDE configuration (`.vscode`, `.idea`)
+- Node modules and logs
+
+This keeps Docker images lean and prevents sensitive files from being included in build layers.
 
 ## Common Commands
 
